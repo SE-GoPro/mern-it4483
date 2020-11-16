@@ -21,7 +21,7 @@ const LoginForm = ({ history }) => {
     console.log("user ", user)
     notify("Đăng nhập thành công", "", "success")
     auth().setAuth(user)
-    history.push("/dashboard")
+    history.push("/")
   };
 
   return (
