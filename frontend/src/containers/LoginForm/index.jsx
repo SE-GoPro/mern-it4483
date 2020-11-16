@@ -1,27 +1,29 @@
-
-import React, {useEffect} from "react";
-import to from "await-to-js"
+import React, { useEffect } from "react";
+import to from "await-to-js";
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import StyleLoginForm from "./index.style";
 import { Typography } from "antd";
 import { withRouter } from "react-router-dom";
-import userService from "@services/userService"
-import auth from "@utils/auth"
-import useBaseHook from "@hooks/BaseHooks"
+import userService from "@services/userService";
+import auth from "@utils/auth";
+import useBaseHook from "@hooks/BaseHooks";
 const { Title } = Typography;
 
 const LoginForm = ({ history }) => {
-  const {notify, getData} = useBaseHook();
+  const { notify, getData } = useBaseHook();
+  useEffect(() => {
+    auth().logout();
+  }, []);
   const onFinish = async (values) => {
-    let [error, user = {} ] = await to(userService().login(values));
-    if(error){
+    let [error, user = {}] = await to(userService().login(values));
+    if (error) {
       notify(error.message, "", "error");
       return;
     }
-    notify("Đăng nhập thành công", "", "success")
-    auth().setAuth(user)
-    history.push("/")
+    notify("Đăng nhập thành công", "", "success");
+    auth().setAuth(user);
+    window.location.href = "/";
   };
 
   return (
@@ -68,7 +70,7 @@ const LoginForm = ({ history }) => {
             <Checkbox>Lưu tài khoản</Checkbox>
           </Form.Item>
 
-          <a className='login-form-forgot' href='#'>
+          <a className="login-form-forgot" href="#">
             Quên mật khẩu
           </a>
         </Form.Item>

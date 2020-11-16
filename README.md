@@ -34,8 +34,11 @@ npm run dev
 
 # Run backend only
 npm run server
+
+# Run frontend only
+npm run client
 ```
-You can check more run statement in package.json file
+You can check more commands in package.json file
 ## Build & Deploy
 
 ```
@@ -49,7 +52,7 @@ Remember to change NODE_ENV=production in .env file when you deploy on your serv
 
 ### Seed Database
 
-You can use the following commands to seed the database with some sample users and products as well as destroy all data
+You can use the following commands to seed the database with some sample users as well as destroy all data
 
 ```
 # Import data
