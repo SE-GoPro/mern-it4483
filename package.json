@@ -5,8 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node --exec babel-node backend/server",
-    "server": "nodemon --exec babel-node backend/server",
+    "start": "node --experimental-modules backend/server",
+    "server": "nodemon --experimental-modules backend/server",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
@@ -27,10 +27,6 @@
     "multer": "^1.4.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
-    "@babel/node": "^7.12.6",
-    "@babel/preset-env": "^7.12.1",
     "concurrently": "^5.3.0",
     "nodemon": "^2.0.4"
   }
