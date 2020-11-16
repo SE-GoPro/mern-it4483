@@ -75,9 +75,9 @@ class BaseService {
         } catch (e) {
             console.log(e)
         }
-
+        let url = response.url || ""
         if (!response.ok) {
-            if ([401].indexOf(response.status) !== -1) {
+            if ([401].indexOf(response.status) !== -1 && !url.includes("/login")) {
                 // auto logout if 401 Unauthorized or 403 Forbidden response returned from api
                 auth().logout();
                 window.location.href = "/login"

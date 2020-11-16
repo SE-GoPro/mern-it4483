@@ -17,8 +17,7 @@ const Navbar = () => {
 
   const profile = () => (
     <div>
-      <p>Tài khoản</p>
-      <p>Đăng xuất</p>
+      <a href = "/login">Đăng xuất</a>
     </div>
   );
 

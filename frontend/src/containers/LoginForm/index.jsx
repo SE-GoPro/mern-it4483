@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import to from "await-to-js"
 import { Form, Input, Button, Checkbox } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
@@ -7,16 +7,21 @@ import { Typography } from "antd";
 import { withRouter } from "react-router-dom";
 import userService from "@services/userService"
 import auth from "@utils/auth"
+import useBaseHook from "@hooks/BaseHooks"
 const { Title } = Typography;
 
 const LoginForm = ({ history }) => {
+  const {notify, getData} = useBaseHook();
   const onFinish = async (values) => {
     let [error, user = {} ] = await to(userService().login(values));
     if(error){
+      notify(error.message, "", "error");
       return;
     }
+    console.log("user ", user)
+    notify("Đăng nhập thành công", "", "success")
     auth().setAuth(user)
-    history.push("/")
+    history.push("/dashboard")
   };
 
   return (
@@ -40,7 +45,7 @@ const LoginForm = ({ history }) => {
         >
           <Input
             prefix={<UserOutlined className="site-form-item-icon" />}
-            placeholder="email"
+            placeholder="admin@example.com"
           />
         </Form.Item>
         <Form.Item
@@ -55,7 +60,7 @@ const LoginForm = ({ history }) => {
           <Input
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
-            placeholder="Password"
+            placeholder="123456"
           />
         </Form.Item>
         <Form.Item>
