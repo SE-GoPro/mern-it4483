@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import UserIndex from "./User/index"
 import Dashboard from './Dashboard';
-import auth from "@utils/auth"
+import auth from "@utils/auth";
 export const routes = [
   {
     path: '/',
@@ -74,8 +74,8 @@ export const routes = [
     component: () => <UserIndex/>,
   },
 ];
+
 const token = auth().token;
-console.log("token ", token)
 export default () => (
   <Switch>
     {routes.map(({ path, exact = false, component: Component, ...rest }) => {

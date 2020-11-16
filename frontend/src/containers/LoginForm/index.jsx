@@ -1,3 +1,4 @@
+
 import React, {useEffect} from "react";
 import to from "await-to-js"
 import { Form, Input, Button, Checkbox } from "antd";
@@ -18,7 +19,6 @@ const LoginForm = ({ history }) => {
       notify(error.message, "", "error");
       return;
     }
-    console.log("user ", user)
     notify("Đăng nhập thành công", "", "success")
     auth().setAuth(user)
     history.push("/")
