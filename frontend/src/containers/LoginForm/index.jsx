@@ -16,7 +16,9 @@ const LoginForm = ({ history }) => {
     auth().logout();
   }, []);
   const onFinish = async (values) => {
-    let [error, user = {}] = await to(userService().login(values));
+    // let [error, user = {}] = await to(userService().login(values));
+    const user = {};
+    const error = null;
     if (error) {
       notify(error.message, "", "error");
       return;

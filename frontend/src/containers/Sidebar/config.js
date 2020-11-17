@@ -86,10 +86,16 @@ export const sidebarMenu = [
         route: '/payload-statistic',
       },
       {
-        key: 'TroubleStatistic',
+        key: 'ProblemStatistic',
         heading: 'Sự cố',
-        icon: 'fas fa-times-octagon',
+        icon: 'fas fa-layer-group',
         route: '/trouble-statistic',
+      },
+      {
+        key: 'UserStatistic',
+        heading: 'Người dùng',
+        icon: 'fas fa-times-octagon',
+        route: '/user-statistic',
       },
     ],
   },

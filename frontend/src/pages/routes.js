@@ -2,6 +2,11 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import UserIndex from "./User/index"
 import Dashboard from './Dashboard';
+import StatisticDashboard from './Statistic/Dashboard';
+import StatisticDrone from './Statistic/Drone';
+import StatisticPayload from './Statistic/Payload';
+import StatisticProblem from './Statistic/Problem';
+import StatisticUser from './Statistic/User';
 import auth from "@utils/auth";
 export const routes = [
   {
@@ -20,10 +25,6 @@ export const routes = [
   {
     path: '/fly-setting',
     component: () => <div>Thiết lập đường bay</div>,
-  },
-  {
-    path: '/drone-statistic',
-    component: () => <div>Thống kê drone</div>,
   },
   {
     path: '/flight-hub',
@@ -51,19 +52,23 @@ export const routes = [
   },
   {
     path: '/dashboard-statistic',
-    component: () => <div>Báo cáo thống kê</div>,
+    component: StatisticDashboard,
   },
   {
     path: '/drone-statistic',
-    component: () => <div>Báo cáo thống kê về dronedrone</div>,
+    component: StatisticDrone,
   },
   {
     path: '/payload-statistic',
-    component: () => <div>Báo cáo thống kê về payloadpayload</div>,
+    component: StatisticPayload,
   },
   {
     path: '/trouble-statistic',
-    component: () => <div>Báo cáo thống kê về sự cố</div>,
+    component: StatisticProblem,
+  },
+  {
+    path: '/user-statistic',
+    component: StatisticUser,
   },
   {
     path: '/problems',
