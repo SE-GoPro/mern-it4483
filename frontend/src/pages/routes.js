@@ -50,6 +50,22 @@ export const routes = [
     component: () => <div>Báo cáo thống kê</div>,
   },
   {
+    path: '/dashboard-statistic',
+    component: () => <div>Báo cáo thống kê</div>,
+  },
+  {
+    path: '/drone-statistic',
+    component: () => <div>Báo cáo thống kê về dronedrone</div>,
+  },
+  {
+    path: '/payload-statistic',
+    component: () => <div>Báo cáo thống kê về payloadpayload</div>,
+  },
+  {
+    path: '/trouble-statistic',
+    component: () => <div>Báo cáo thống kê về sự cố</div>,
+  },
+  {
     path: '/problems',
     component: () => <div>Sự cố</div>,
   },

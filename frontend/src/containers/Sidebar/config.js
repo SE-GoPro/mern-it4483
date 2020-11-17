@@ -66,6 +66,32 @@ export const sidebarMenu = [
     heading: 'Báo cáo thống kê',
     icon: 'fas fa-chart-line',
     route: '/statistic',
+    subMenu: [
+      {
+        key: 'DashboardStatistic',
+        heading: 'Dashboard',
+        icon: 'fas fa-chart-line',
+        route: '/dashboard-statistic',
+      },
+      {
+        key: 'DroneStatistic',
+        heading: 'Drone',
+        icon: 'fas fa-drone-alt',
+        route: '/drone-statistic',
+      },
+      {
+        key: 'PayloadStatistic',
+        heading: 'Payload',
+        icon: 'fas fa-layer-group',
+        route: '/payload-statistic',
+      },
+      {
+        key: 'TroubleStatistic',
+        heading: 'Sự cố',
+        icon: 'fas fa-times-octagon',
+        route: '/trouble-statistic',
+      },
+    ],
   },
   {
     key: 'Warning',
