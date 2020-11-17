@@ -52,6 +52,7 @@ class BaseService {
             headers: {
                 'Content-Type': 'application/json',
             },
+            mode: 'no-cors',
             ...options
         };
 
