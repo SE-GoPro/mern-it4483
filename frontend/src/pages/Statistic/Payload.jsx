@@ -34,7 +34,7 @@ function Payload() {
   return (
     <div>
       <Breadcrumb
-        style={{ marginBottom: 8 }}
+        style={{ marginBottom: 16, marginTop: 8, fontSize: 18, fontWeight: 500 }}
       >
         <Breadcrumb.Item>Báo cáo thống kê</Breadcrumb.Item>
         <Breadcrumb.Item>Payload</Breadcrumb.Item>
@@ -77,7 +77,7 @@ function Payload() {
                 <Bar dataKey="uv" stackId="a" fill="#82ca9d" />
               </BarChart>
             </ResponsiveContainer>
-            <Button type="primary">In báo cáo</Button>
+            <Button type="primary" style={{ float: 'right'}}>In báo cáo</Button>
           </Card>
         </Col>
       </Row>

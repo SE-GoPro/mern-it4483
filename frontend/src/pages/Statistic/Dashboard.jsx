@@ -73,7 +73,7 @@ function Dashboard() {
   return (
     <div>
       <Breadcrumb
-        style={{ marginBottom: 8 }}
+        style={{ marginBottom: 16, marginTop: 8, fontSize: 18, fontWeight: 500 }}
       >
         <Breadcrumb.Item>Báo cáo thống kê</Breadcrumb.Item>
         <Breadcrumb.Item>Tổng quan</Breadcrumb.Item>

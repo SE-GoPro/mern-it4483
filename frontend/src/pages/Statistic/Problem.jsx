@@ -81,7 +81,7 @@ function Problem() {
   return (
     <div>
       <Breadcrumb
-        style={{ marginBottom: 8 }}
+        style={{ marginBottom: 16, marginTop: 8, fontSize: 18, fontWeight: 500 }}
       >
         <Breadcrumb.Item>Báo cáo thống kê</Breadcrumb.Item>
         <Breadcrumb.Item>Sự cố</Breadcrumb.Item>
@@ -130,7 +130,7 @@ function Problem() {
               <DatePicker picker="month" />
             </div>
             <Table columns={columns} dataSource={data} bordered />
-            <Button type="primary">In báo cáo</Button>
+            <Button type="primary" style={{ float: 'right' }}>In báo cáo</Button>
           </Card>
         </Col>
       </Row>
